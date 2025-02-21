@@ -83,7 +83,7 @@ st.markdown('<div class="section-header"><center><h2>Analyse avec des données d
 #==========================================================
 #@st.cache_data
 #def load_data():
-file_location = 'Pakistan Largest Ecommerce Dataset.csv'
+file_location = 'Pakistan_Dataset.csv'
 file_type = "csv"
 infer_schema = "false"
 first_row_is_header = "true"
@@ -94,8 +94,6 @@ df = spark.read.format(file_type)\
 .option("header", first_row_is_header)\
 .option("sep", delimiter)\
 .load(file_location)
-    
-
 
 
 #dfp=spark.createDataFrame(load_data())
