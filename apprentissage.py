@@ -62,12 +62,12 @@ st.markdown('<div class="section-header"><center><h2>Analyse avec des données d
 #==========================================================
 #==== Base et Traitement ==================================
 #==========================================================
-#@st.cache_data
-#def load_data():
+@st.cache_data
+def load_data():
     #file_location = 'Pakistan Largest Ecommerce Dataset.csv'
-    #df = pd.read_csv(file_location)
+    df = pd.read_csv("Pakistan_Dataset.csv")
     #df_ok=pd.read_csv("Data_OK.csv")
-    #return df
+    return df
     
 
 
@@ -75,7 +75,7 @@ st.markdown('<div class="section-header"><center><h2>Analyse avec des données d
 #dfp=spark.createDataFrame(load_data())
 #dfp=load_data()
 bon_de=pd.read_csv("Data_OK.csv")
-df_brut =pd.read_csv("Pakistan_Dataset.csv")
+df_brut =load_data()
 
 st.sidebar.image("Logo.png") # Remplacez par le chemin de votre logo
 st.sidebar.title("Membre du GROUPE")
@@ -168,11 +168,11 @@ with tables[1]:
 #==============================================================
 with tables[2]:
     st.text("La base de donnée présentée ici est la Base appurée, elle a été traitée")
-    st.dataframe(good_df)
+    st.dataframe(bon_de)
 
 with tables[3]:
     st.text("Visualisation et calcul des indicateurs avec la base appurées")
-    df_desc2=good_df.describe()
+    df_desc2=bon_de.describe()
     st.text("Statistique descriptive de la base")
     st.dataframe(df_desc2)
     
