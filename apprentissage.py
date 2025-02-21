@@ -43,6 +43,9 @@ warnings.filterwarnings('ignore')
 spark=SparkSession.builder.appName("Data_Wrangling").getOrCreate()
 warnings.filterwarnings('ignore')
 
+os.system("apt update && apt install -y openjdk-11-jdk")
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
+
 
 st.markdown(
     """
