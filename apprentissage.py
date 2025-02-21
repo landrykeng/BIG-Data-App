@@ -75,7 +75,7 @@ st.markdown('<div class="section-header"><center><h2>Analyse avec des données d
 #dfp=spark.createDataFrame(load_data())
 #dfp=load_data()
 bon_de=pd.read_csv("Data_OK.csv")
-df_brut =pd.read_csv("Pakistan Largest Ecommerce Dataset.csv")
+df_brut =pd.read_csv("Pakistan_Dataset.csv")
 
 st.sidebar.image("Logo.png") # Remplacez par le chemin de votre logo
 st.sidebar.title("Membre du GROUPE")
