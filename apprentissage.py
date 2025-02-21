@@ -269,6 +269,6 @@ with tables[3]:
     with clf1:
         make_bar_polar(oreder_completed_by_category,value="count",group="category_name_1",color=px.colors.qualitative.Vivid_r)
     with clf2:
-        make_tremap(oreder_
+        make_tremap(oreder_not_completed_by_category,value="count",group="category_name_1")
     
     
