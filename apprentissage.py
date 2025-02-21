@@ -159,9 +159,9 @@ with tables[0]:
     best_category = pd.read_csv("Best.csv")
     col1, col2 =st.columns([7,3])
     
-    st.text("Categorie de produit les plus vendus")
+    #st.text("Categorie de produit les plus vendus")
     with col1:
-        make_bar(best_category,x_val="category_name_1",y_val="count",text_val="count",color=px.colors.qualitative.Pastel1_r)
+        make_bar(best_category,x_val="category_name_1",y_val="count",text_val="count",color=px.colors.qualitative.Pastel1_r,titre="Categorie de produit les plus vendus")
     with col2:
         st.dataframe(best_category,
                  column_order=("category_name_1", "count"),
@@ -199,7 +199,7 @@ with tables[0]:
                         max_value=233695,
                      )})
     with cl02:
-        make_bar(status_count,x_val="status",y_val="count",text_val="count",color=px.colors.qualitative.Light24)
+        make_bar(status_count,x_val="status",y_val="count",text_val="count",color=px.colors.qualitative.Light24,titre="Satut des paiements")
     
     
     clm1, clm2, clm3 =st.columns(3)
@@ -254,4 +254,4 @@ with tables[0]:
     
 with tables[1]:
     st.text("La base de donnée présentée ici est la Base appurée, elle a été traitée")
-    #st.dataframe(bon_de)
+    st.dataframe(bon_de)
