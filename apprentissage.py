@@ -41,6 +41,9 @@ from pyspark.sql.types import IntegerType
 os.system("apt update && apt install -y openjdk-11-jdk")
 os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
 
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
+os.environ["PATH"] = os.environ["JAVA_HOME"] + "/bin:" + os.environ["PATH"]
+
 import warnings
 warnings.filterwarnings('ignore')
 spark=SparkSession.builder.appName("Data_Wrangling").getOrCreate()
