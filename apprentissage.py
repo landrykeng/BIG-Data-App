@@ -40,7 +40,7 @@ from pyspark.sql.types import IntegerType
 
 import warnings
 warnings.filterwarnings('ignore')
-sc=SparkContext.getOrCreate()
+#sc=SparkContext.getOrCreate()
 spark=SparkSession.builder.appName("Data_Wrangling").getOrCreate()
 warnings.filterwarnings('ignore')
 
