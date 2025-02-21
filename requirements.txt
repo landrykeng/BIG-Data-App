@@ -1,10 +1,9 @@
 streamlit
 pandas
-altair
-plotly
+numpy
 matplotlib
-warnings
-os
-datetime
+plotly
 prophet
 pyspark
+scikit-learn
+setuptools

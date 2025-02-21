@@ -38,11 +38,17 @@ from pyspark.sql.functions import *
 from pyspark.sql import functions as F
 from pyspark.sql.types import IntegerType
 
+os.system("apt update && apt install -y openjdk-11-jdk")
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
+
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
+os.environ["PATH"] = os.environ["JAVA_HOME"] + "/bin:" + os.environ["PATH"]
+
 import warnings
 warnings.filterwarnings('ignore')
-sc=SparkContext.getOrCreate()
 spark=SparkSession.builder.appName("Data_Wrangling").getOrCreate()
 warnings.filterwarnings('ignore')
+
 
 
 st.markdown(
@@ -83,7 +89,7 @@ st.markdown('<div class="section-header"><center><h2>Analyse avec des données d
 #==========================================================
 #@st.cache_data
 #def load_data():
-file_location = 'Pakistan Largest Ecommerce Dataset.csv'
+file_location = 'Pakistan_Dataset.csv'
 file_type = "csv"
 infer_schema = "false"
 first_row_is_header = "true"
@@ -94,8 +100,6 @@ df = spark.read.format(file_type)\
 .option("header", first_row_is_header)\
 .option("sep", delimiter)\
 .load(file_location)
-    
-
 
 
 #dfp=spark.createDataFrame(load_data())
