@@ -1,3 +1,4 @@
+pip
 altair==5.5.0
 asttokens==3.0.0
 attrs==25.1.0
