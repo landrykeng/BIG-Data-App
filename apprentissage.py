@@ -152,9 +152,9 @@ tables = st.tabs(["Visualisation Indicateur","Base de données"])
 
 with tables[0]:
     st.text("Visualisation et calcul des indicateurs avec la base appurées")
-    #df_desc2=bon_de.describe()
+    df_desc2=bon_de.describe()
     st.text("Statistique descriptive de la base")
-    #st.dataframe(df_desc2)
+    st.dataframe(df_desc2)
     
     best_category = pd.read_csv("Best.csv")
     col1, col2 =st.columns([7,3])
@@ -254,4 +254,4 @@ with tables[0]:
     
 with tables[1]:
     st.text("La base de donnée présentée ici est la Base appurée, elle a été traitée")
-    st.dataframe(bon_de)
+    st.dataframe(bon_de.head(1000))
