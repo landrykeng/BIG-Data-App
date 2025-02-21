@@ -198,7 +198,7 @@ with tables[3]:
                         max_value=115874,
                      )})
         
-    status_count = pd.read("Statut.csv")
+    status_count = pd.read_csv("Statut.csv")
     
     cl01, cl02 =st.columns([3,7])
     
