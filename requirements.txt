@@ -6,3 +6,4 @@ plotly
 prophet
 pyspark
 scikit-learn
+setuptools
