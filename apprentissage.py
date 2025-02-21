@@ -74,8 +74,8 @@ def load_data():
 
 #dfp=spark.createDataFrame(load_data())
 #dfp=load_data()
-bon_de=pd.read_csv("Data_OK.csv")
-df_brut =load_data()
+#bon_de=pd.read_csv("Data_OK.csv")
+#df_brut =load_data()
 
 st.sidebar.image("Logo.png") # Remplacez par le chemin de votre logo
 st.sidebar.title("Membre du GROUPE")
@@ -154,27 +154,27 @@ def make_tremap(data, value,group,titre=""):
 tables = st.tabs(["Données Brutes", "Petite observation des donnée brutes", "Données Traitées","Visualisation Indicateur","Modélisation en Bonus"])
 with tables[0]:
     st.text("Ici se trouve la base brute sans traitement avec les valeurs atipiques")
-    st.dataframe(df_brut)
+    #st.dataframe(df_brut)
     
 with tables[1]:
     st.text("Une description des imperfections des données brutes")
-    df_desc1=df_brut.describe()
+    #df_desc1=df_brut.describe()
     st.text("Statistiques descriptives de la base")
-    st.dataframe(df_desc1)
-    good_df = bon_de
+    #st.dataframe(df_desc1)
+    #good_df = bon_de
         
 #==============================================================
 #==============Tableau de Bord Proprement dit==================
 #==============================================================
 with tables[2]:
     st.text("La base de donnée présentée ici est la Base appurée, elle a été traitée")
-    st.dataframe(bon_de)
+    #st.dataframe(bon_de)
 
 with tables[3]:
     st.text("Visualisation et calcul des indicateurs avec la base appurées")
-    df_desc2=bon_de.describe()
+    #df_desc2=bon_de.describe()
     st.text("Statistique descriptive de la base")
-    st.dataframe(df_desc2)
+    #st.dataframe(df_desc2)
     
     best_category = pd.read_csv("Best.csv")
     col1, col2 =st.columns([7,3])
