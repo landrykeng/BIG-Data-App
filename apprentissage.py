@@ -65,17 +65,11 @@ st.markdown('<div class="section-header"><center><h2>Analyse avec des données d
 @st.cache_data
 def load_data():
     #file_location = 'Pakistan Largest Ecommerce Dataset.csv'
-    df = pd.read_csv("Pakistan_Dataset.csv")
+    df = pd.read_csv("Data_OK.csv")
     #df_ok=pd.read_csv("Data_OK.csv")
     return df
     
-
-
-
-#dfp=spark.createDataFrame(load_data())
-#dfp=load_data()
-#bon_de=pd.read_csv("Data_OK.csv")
-#df_brut =load_data()
+bon_de=load_data()
 
 st.sidebar.image("Logo.png") # Remplacez par le chemin de votre logo
 st.sidebar.title("Membre du GROUPE")
@@ -151,26 +145,12 @@ def make_tremap(data, value,group,titre=""):
 
  
 #st.sidebar.write(f"Téléphone : {telephone}")
-tables = st.tabs(["Données Brutes", "Petite observation des donnée brutes", "Données Traitées","Visualisation Indicateur","Modélisation en Bonus"])
-with tables[0]:
-    st.text("Ici se trouve la base brute sans traitement avec les valeurs atipiques")
-    #st.dataframe(df_brut)
-    
-with tables[1]:
-    st.text("Une description des imperfections des données brutes")
-    #df_desc1=df_brut.describe()
-    st.text("Statistiques descriptives de la base")
-    #st.dataframe(df_desc1)
-    #good_df = bon_de
-        
+tables = st.tabs(["Visualisation Indicateur","Base de données"])
 #==============================================================
 #==============Tableau de Bord Proprement dit==================
 #==============================================================
-with tables[2]:
-    st.text("La base de donnée présentée ici est la Base appurée, elle a été traitée")
-    #st.dataframe(bon_de)
 
-with tables[3]:
+with tables[0]:
     st.text("Visualisation et calcul des indicateurs avec la base appurées")
     #df_desc2=bon_de.describe()
     st.text("Statistique descriptive de la base")
@@ -272,4 +252,6 @@ with tables[3]:
     with clf2:
         make_tremap(oreder_not_completed_by_category,value="count",group="category_name_1")
     
-    
+with tables[1]:
+    st.text("La base de donnée présentée ici est la Base appurée, elle a été traitée")
+    #st.dataframe(bon_de)
